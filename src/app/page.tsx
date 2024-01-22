@@ -1,7 +1,7 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default async function Home() {
-  const response = await fetch('https://pokeapi.co/api/v2/pokemon', {
+  const response = await fetch("https://pokeapi.co/api/v2/pokemon", {
     next: { revalidate: 30 },
   });
   const { results: pokemons } = await response.json();
@@ -12,11 +12,7 @@ export default async function Home() {
 
       <div className="flex flex-wrap gap-3">
         {pokemons.map((pokemon: any) => (
-          <Link
-            href={`/info/${pokemon.name}`}
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            key={pokemon.name}
-          >
+          <Link href={`/write/${pokemon.name}`} key={pokemon.name}>
             {pokemon.name}
           </Link>
         ))}
