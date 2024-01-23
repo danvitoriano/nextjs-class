@@ -12,7 +12,7 @@ export default async function Home() {
 
       <div className="flex flex-wrap gap-3">
         {pokemons.map((pokemon: any) => (
-          <Link href={`/write/${pokemon.name}`} key={pokemon.name}>
+          <Link href={`/info/${pokemon.name}`} key={pokemon.name}>
             {pokemon.name}
           </Link>
         ))}
